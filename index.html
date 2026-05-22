@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DonateUA — ЗСУ підтримка</title>
+
+<style>
+:root{
+--bg:#07140f;
+--card:#0f2219;
+--stroke:rgba(255,255,255,0.08);
+--gold:#d6a84f;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:linear-gradient(180deg,#07140f,#050a08);
+color:#fff;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--stroke);
+z-index:1000;
+}
+
+nav h1{
+color:var(--gold);
+font-size:18px;
+}
+
+nav button{
+background:none;
+border:none;
+color:#ddd;
+margin:0 6px;
+cursor:pointer;
+transition:.3s;
+}
+
+nav button:hover{color:var(--gold);}
+
+.slide{
+display:none;
+padding:90px 18px;
+min-height:100vh;
+animation:fade .4s ease;
+}
+
+.slide.active{display:block;}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.hero{text-align:center;}
+.hero h2{font-size:44px;color:var(--gold);}
+.hero p{opacity:.8;margin-top:10px;}
+
+.story{
+max-width:1000px;
+margin:auto;
+background:rgba(255,255,255,0.04);
+padding:25px;
+border-radius:16px;
+border:1px solid var(--stroke);
+}
+
+.story h2{color:var(--gold);}
+.story p{opacity:.9;line-height:1.7;margin-bottom:10px;}
+
+.story-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:12px;
+margin-top:15px;
+}
+
+.box{
+background:rgba(0,0,0,0.3);
+padding:12px;
+border-radius:12px;
+border-left:3px solid var(--gold);
+transition:.3s;
+}
+
+.box:hover{transform:translateY(-5px);}
+
+.box img{
+width:100%;
+border-radius:10px;
+margin-bottom:8px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--stroke);
+border-radius:12px;
+padding:12px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:var(--gold);
+}
+
+.btn{
+padding:10px 14px;
+background:linear-gradient(90deg,var(--gold),#b98b3d);
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+color:#111;
+margin-top:10px;
+transition:.3s;
+}
+
+.btn:hover{transform:scale(1.05);}
+
+.form{
+max-width:420px;
+margin:auto;
+margin-top:25px;
+background:var(--card);
+padding:15px;
+border-radius:12px;
+border:1px solid var(--stroke);
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+border:none;
+border-radius:8px;
+background:#12261c;
+color:white;
+}
+
+.stat{
+font-size:26px;
+color:var(--gold);
+}
+
+.log{
+margin-top:10px;
+font-size:14px;
+opacity:.85;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>DonateUA 💛 ЗСУ</h1>
+
+<div>
+<button onclick="go('home')">Головна</button>
+<button onclick="go('story')">Історія</button>
+<button onclick="go('donate')">Донат</button>
+<button onclick="go('missions')">Місії</button>
+<button onclick="go('stats')">Фінал</button>
+</div>
+</nav>
+
+<section id="home" class="slide active">
+<div class="hero">
+<h2>Разом до перемоги</h2>
+<p>Підтримка Збройних Сил України 🇺🇦</p>
+</div>
+</section>
+
+<section id="story" class="slide">
+
+<div class="story">
+
+<h2>💛 Історія підтримки України</h2>
+
+<p>З початку війни українці об’єднались у величезний волонтерський рух.</p>
+<p>Кожен донат став частиною великої системи допомоги армії.</p>
+
+<div class="story-grid">
+
+<div class="box">
+<img src="https://i1-c.pinimg.com/736x/36/96/f3/3696f3f900a54abfa49d6567eba47f0a.jpg">
+🚁 Дрони та розвідка
+</div>
+
+<div class="box">
+<img src="https://i.pinimg.com/736x/60/1e/a3/601ea3923605b05dc2db90a1c7758076.jpg">
+🛡 Захист військових
+</div>
+
+<div class="box">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRFFn6u-H03uDVtsayBuKvw3yg00sZ9imxLpWW1MjcZ8nn7eHOJ">
+🚑 Медична допомога
+</div>
+
+</div>
+
+<h2 style="margin-top:20px;">⚡ Як все змінилось</h2>
+
+<p>Україна стала країною сильного волонтерського руху.</p>
+<p>Люди допомагають армії щодня — донатами, речами і ресурсами.</p>
+
+<div class="story-grid">
+
+<div class="box">
+<img src="https://i.ibb.co/1tNH9b17/Rectangle-17-1.png" alt="Rectangle 17 (1)" border="0">
+Очі армії — дрони
+</div>
+
+<div class="box">
+<img src="https://i.ibb.co/jZkCF2qC/Rectangle-20.png" alt="Rectangle 20" border="0">
+Евакуація людей
+</div>
+
+<div class="box">
+<img src="https://i.ibb.co/JF7Rw7Jk/Rectangle-23-1.png" alt="Rectangle 23 (1)" border="0">
+Гуманітарна допомога
+</div>
+
+</div>
+
+<h2 style="margin-top:20px;">💙 Висновок</h2>
+
+<p>Це історія сили, єдності та підтримки.</p>
+<p style="color:var(--gold);">“Україна тримається завдяки людям”</p>
+
+</div>
+
+</section>
+
+<section id="donate" class="slide">
+
+<h2>💰 Донати</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Дрони</h3>
+<button class="btn" onclick="add(200)">+200 ₴</button>
+</div>
+
+<div class="card">
+<h3>Медицина</h3>
+<button class="btn" onclick="add(150)">+150 ₴</button>
+</div>
+
+<div class="card">
+<h3>Транспорт</h3>
+<button class="btn" onclick="add(300)">+300 ₴</button>
+</div>
+
+</div>
+
+<div class="form">
+<h3>Швидкий донат</h3>
+<input id="name" placeholder="Ім'я">
+<input id="sum" type="number" placeholder="Сума">
+<button class="btn" onclick="donate()">Підтвердити</button>
+<div id="log" class="log"></div>
+</div>
+
+</section>
+
+<section id="missions" class="slide">
+
+<div class="story">
+
+<h2>🎯 Місії допомоги</h2>
+
+<div class="story-grid">
+
+<div class="box"><img src="https://i1-c.pinimg.com/1200x/3b/eb/62/3beb62533a4bc078d86f007ec1c35416.jpg">Дрони</div>
+<div class="box"><img src="https://i1-c.pinimg.com/736x/9a/21/7a/9a217a0a507cdf54a3a09bae6aad5598.jpg">Їжа</div>
+<div class="box"><img src="https://i1-c.pinimg.com/736x/ab/60/d0/ab60d089c4abcd80536c1069ab167943.jpg">Енергія</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="stats" class="slide">
+
+<h2>📊 Статистика</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3 id="total" class="stat">0 ₴</h3>
+<p>Зібрано</p>
+</div>
+
+<div class="card">
+<h3 id="count" class="stat">0</h3>
+<p>Донатів</p>
+</div>
+
+</div>
+
+<div class="story" style="margin-top:20px;">
+
+<h2>💛 Висновок</h2>
+
+<p>Кожен внесок допомагає Україні.</p>
+<p>Це спільна справа всіх людей.</p>
+
+<h2>💙💛 Дякуємо!</h2>
+
+<p>Ваша підтримка наближає перемогу.</p>
+
+<p style="color:var(--gold);">“Разом до перемоги!”</p>
+
+</div>
+
+</section>
+
+<script>
+
+let pages=document.querySelectorAll(".slide");
+let total=0;
+let count=0;
+
+function go(id){
+pages.forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+
+function add(sum){
+total+=sum;
+count++;
+document.getElementById("total").innerText=total+" ₴";
+document.getElementById("count").innerText=count;
+}
+
+function donate(){
+let n=document.getElementById("name").value;
+let s=document.getElementById("sum").value;
+if(!n||!s)return;
+
+total+=parseInt(s);
+count++;
+
+document.getElementById("total").innerText=total+" ₴";
+document.getElementById("count").innerText=count;
+
+document.getElementById("log").innerText=
+"❤️ "+n+" задонатив "+s+" ₴";
+}
+
+</script>
+
+</body>
+</html>
